@@ -54,14 +54,14 @@ describe("A request for orders", () => {
       .expect(200);
 
     // make sure we only got the orders for user #2
-    expect(response.body.orders.length).toEqual(2);
+    expect(response.body.length).toEqual(2);
 
     // check stuff up
-    expect(response.body.orders[0].id).toEqual(orderOne.id);
-    expect(response.body.orders[1].id).toEqual(orderTwo.id);
+    expect(response.body[0].id).toEqual(orderOne.id);
+    expect(response.body[1].id).toEqual(orderTwo.id);
 
     // check stuff down
-    expect(response.body.orders[0].ticket.id).toEqual(ticketTwo.id);
-    expect(response.body.orders[1].ticket.id).toEqual(ticketThree.id);
+    expect(response.body[0].ticket.id).toEqual(ticketTwo.id);
+    expect(response.body[1].ticket.id).toEqual(ticketThree.id);
   });
 });
